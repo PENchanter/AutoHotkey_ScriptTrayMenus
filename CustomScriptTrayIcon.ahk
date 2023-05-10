@@ -15,7 +15,10 @@ SysTrayIcon:
 				Menu, Tray, Icon, % xICON.File, % xICON.Index
 			}
 
-Menu, Tray,	Add, % xSEPARATOR(), Separator1
+Menu, Tray, NoStandard
+Menu, Tray, Color, b1b1b1
+
+Menu, Tray, Add, % xSEPARATOR(), Separator1
 
 xINFO := "AHK v." . A_AhkVersion . A_Space . ((A_PtrSize=8) ? "(64" : "(32") . "-bit)"
 
@@ -68,27 +71,27 @@ FetchMyIcon(GuiMenuItem)
 		Icon := xSYSTEMROOT . "\SYSTEM32\shell32.dll"
 		If (GuiMenuItem = "ThisScriptsTrayIcon")
 			{
-				Number	:= 	44
+				Number := 44
 			}
 
 		If (GuiMenuItem = "RedXIcon")
 			{
-				Number	:= 	240
+				Number := 240
 			}
 
 		If (GuiMenuItem = "RedPowerIcon")
 			{
-				Number	:= 	329
+				Number := 329
 			}
 
 		If (GuiMenuItem = "BluePowerIcon")
 			{
-				Number	:= 	221
+				Number := 221
 			}
 
 		If (GuiMenuItem = "BlueInfoIcon")
 			{
-				Number	:= 	16783
+				Number := 16783
 			}
 		Return, {File: Icon, Index: Number}
 	}
